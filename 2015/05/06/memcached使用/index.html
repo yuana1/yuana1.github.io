@@ -1,0 +1,679 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="安静的码农" />
+
+
+
+  <meta name="keywords" content="memcached," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="安装memcachedwindows下安装windows下有安装包。安装包的地址在此。
+linux下安装linux下可以从源码安装，也可以直接使用安装包安装。源码可以从gitbug上获取，地址在此。可以从源码安装。在ubuntu上可以使用命令行安装。sudo apt-get install memcached">
+<meta property="og:type" content="article">
+<meta property="og:title" content="memcached使用">
+<meta property="og:url" content="http://yoursite.com/2015/05/06/memcached使用/index.html">
+<meta property="og:site_name" content="圆润月光">
+<meta property="og:description" content="安装memcachedwindows下安装windows下有安装包。安装包的地址在此。
+linux下安装linux下可以从源码安装，也可以直接使用安装包安装。源码可以从gitbug上获取，地址在此。可以从源码安装。在ubuntu上可以使用命令行安装。sudo apt-get install memcached">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="memcached使用">
+<meta name="twitter:description" content="安装memcachedwindows下安装windows下有安装包。安装包的地址在此。
+linux下安装linux下可以从源码安装，也可以直接使用安装包安装。源码可以从gitbug上获取，地址在此。可以从源码安装。在ubuntu上可以使用命令行安装。sudo apt-get install memcached">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'hide'
+  };
+</script>
+
+  <title> memcached使用 | 圆润月光 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">圆润月光</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-next-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form" >
+  <input type="text" id="ts-search-input" class="menu-search-input">
+</form>
+<script>
+  var option = {
+    engineKey: 'b10f06736ea678b46619'
+  };
+  (function(w,d,t,u,n,s,e){
+    s = d.createElement(t);
+    s.src = u;
+    s.async = 1;
+    w[n] = function(r){
+      w[n].opts = r;
+    };
+    e = d.getElementsByTagName(t)[0];
+    e.parentNode.insertBefore(s, e);
+  })(window,document,'script','//tinysou-cdn.b0.upaiyun.com/ts.js','_ts');
+  _ts(option);
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              memcached使用
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-05-06T15:33:00+08:00" content="2015-05-06">
+            2015-05-06
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/memcached/" itemprop="url" rel="index">
+                  <span itemprop="name">memcached</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h2 id="安装memcached">安装memcached</h2><h3 id="windows下安装">windows下安装</h3><p>windows下有安装包。安装包的地址在<a href="http://s3.amazonaws.com/downloads.northscale.com/memcached-win64-1.4.4-14.zip" target="_blank" rel="external">此</a>。</p>
+<h3 id="linux下安装">linux下安装</h3><p>linux下可以从源码安装，也可以直接使用安装包安装。<br>源码可以从gitbug上获取，地址在<a href="https://github.com/memcached/memcached" target="_blank" rel="external">此</a>。可以从源码安装。<br>在ubuntu上可以使用命令行安装。<br><code>sudo apt-get install memcached</code><br><a id="more"></a></p>
+<h2 id="启动memcached">启动memcached</h2><p>打开cmd或者终端，输入memcached即可运行。通过memcached -h打印帮助信息可以看到还有更多的参数。常用的如下：<br>-m 指定缓存所使用的最大内存容量，单位是Megabytes，默认是64MB<br>-u 只有以root身份运行时才指定该参数<br>-d 以daemon的形式运行<br>-l 指定监听的地址<br>-p 指定监听的TCP端口号，默认是11211<br>-t 指定线程数，默认是4个<br>-c 最大同时连接数，默认是1024.<br>-U 指定监听的UDP端口号，默认是11211<br>-M 禁用LRU算法,内存耗尽时显示错误，而不是删除项<br>常用的格式如下： memcached -d -m 1024 -p 11211</p>
+<h2 id="连接memcached">连接memcached</h2><p>memcached是一个server端的程序，官方提供了多种客户端，还提供了telnet功能。</p>
+<h3 id="telnet连接">telnet连接</h3><p>在cmd或者终端中输入  telnet localhost 11211 即可连接到memcached服务器上。<br>在这可以输入多种命令，包括</p>
+<ol>
+<li>数据存取， 如get set replace delete等</li>
+<li>查看状态， 如stats ，stats items，stats slabs等。</li>
+</ol>
+<h3 id="客户端程序连接">客户端程序连接</h3><p>java客户端有多个版本，其中xmemcached性能不错。<br>首先下载xmemcached的jar包，添加到工程目录。具体使用可以看<a href="https://github.com/killme2008/xmemcached" target="_blank" rel="external">官方文档</a>。<br>simple-spring-memcached集成了spring和memcached客户端，依靠注解，提供了更加方便的缓存管理操作。他的代码托管在<a href="https://github.com/ragnor/simple-spring-memcached" target="_blank" rel="external">github</a>上。<br>简单介绍一下simple-spring-memcached的使用吧。<br>将spring的jar包(版本高于3.0.7)和simple-spring-memcached的jar包放到classpath目录下，<br>在applicationContext.xml中配置memcached beans。<br>代码如下：</p>
+<pre><code>&lt;aop:aspectj-autoproxy /&gt;
+&lt;import resource=<span class="string">"simplesm-context.xml"</span> /&gt;
+
+&lt;bean <span class="property">name</span>=<span class="string">"defaultMemcachedClient"</span> <span class="type">class</span>=<span class="string">"com.google.code.ssm.CacheFactory"</span>&gt;
+    &lt;<span class="keyword">property</span> <span class="property">name</span>=<span class="string">"cacheClientFactory"</span>&gt;
+        &lt;bean <span class="type">class</span>=<span class="string">"com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl"</span> /&gt;
+    &lt;/<span class="keyword">property</span>&gt;
+    &lt;<span class="keyword">property</span> <span class="property">name</span>=<span class="string">"addressProvider"</span>&gt;
+        &lt;bean <span class="type">class</span>=<span class="string">"com.google.code.ssm.config.DefaultAddressProvider"</span>&gt;
+            &lt;<span class="keyword">property</span> <span class="property">name</span>=<span class="string">"address"</span> value=<span class="string">"127.0.0.1:11211"</span> /&gt;
+        &lt;/bean&gt;
+    &lt;/<span class="keyword">property</span>&gt;
+    &lt;<span class="keyword">property</span> <span class="property">name</span>=<span class="string">"configuration"</span>&gt;
+        &lt;bean <span class="type">class</span>=<span class="string">"com.google.code.ssm.providers.CacheConfiguration"</span>&gt;
+            &lt;<span class="keyword">property</span> <span class="property">name</span>=<span class="string">"consistentHashing"</span> value=<span class="string">"true"</span> /&gt;
+        &lt;/bean&gt;
+    &lt;/<span class="keyword">property</span>&gt;
+&lt;/bean&gt;
+&lt;bean <span class="type">class</span>=<span class="string">"com.google.code.ssm.Settings"</span>&gt;
+    &lt;<span class="keyword">property</span> <span class="property">name</span>=<span class="string">"order"</span> value=<span class="string">"500"</span> /&gt;
+&lt;/bean&gt;
+</code></pre><p>这样定义beans之后，在service层可以使用<code>@AutoWired private Cache defaultMemcachedClient</code>获得Cache对象，进行数据的存取。<br>另一方面，我们可以在dao层的方法上加上注解，这样第一次从数据库里边查出来的数据会放到缓存里边，以后再请求该方法仅仅从缓存中取。<br>simple-spring-memcached中定义了3类注解，分别是read，invalid， update 也就是 添加  删除  更新<br>ReadThroughSingleCache  ReadThroughMultiCache ReadThroughAssignCache<br>InvalidateSingleCache InvalidateMultiCache InvalidateAssignCache<br>UpdateSingleCache  UpdateMultiCache UpdateAssignCache<br>项目中查询地区排名前100名的时候使用了缓存。代码如下：</p>
+<pre><code><span class="annotation">@ReadThroughSingleCache</span>(expiration=<span class="number">24</span>*<span class="number">3600</span>,namespace=<span class="string">"rankResult"</span>)
+public <span class="built_in">List</span>&lt;<span class="built_in">Map</span>&gt; queryRankResultArea(<span class="annotation">@ParameterValueKeyProvider</span> <span class="built_in">Map</span> paramMap) {
+    <span class="comment">// TODO Auto-generated method stub</span>
+    <span class="annotation">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)
+    <span class="built_in">List</span>&lt;<span class="built_in">Map</span>&gt; list = <span class="keyword">this</span>.getSqlMapClientTemplate().queryForList(<span class="string">"rankResultXml.queryRankResultArea"</span>,paramMap);
+    <span class="keyword">return</span> list;
+}
+</code></pre><p>其中expiration是缓存失效时间，默认时间是s，在此设置过期时间为1天。<br>namespace为命名空间，防止产生重复的key。<br>方法中的@ParameterValueKeyProvider注解则表示向memcached中存的key值。key值默认是通过调用Obejct.toString()方法生成的，在此调用的是map.toString()方法。<br>注意memcached的key不能有控制字符，比如空格，回车。请保证你的obejct.toString()不会生成这些字符。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/memcached/" rel="tag">#memcached</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/05/07/soa理解/" rel="prev">soa理解</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/05/04/memcached内存分配机制小解/" rel="next">memcached内存分配机制小解</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://7xi8ab.com1.z0.glb.clouddn.com/cr.jpg" alt="yuana1" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">yuana1</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">安静的码农</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yuana1" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/yuana1" target="_blank">weibo</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装memcached"><span class="nav-number">1.</span> <span class="nav-text">安装memcached</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#windows下安装"><span class="nav-number">1.1.</span> <span class="nav-text">windows下安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux下安装"><span class="nav-number">1.2.</span> <span class="nav-text">linux下安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动memcached"><span class="nav-number">2.</span> <span class="nav-text">启动memcached</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接memcached"><span class="nav-number">3.</span> <span class="nav-text">连接memcached</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#telnet连接"><span class="nav-number">3.1.</span> <span class="nav-text">telnet连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端程序连接"><span class="nav-number">3.2.</span> <span class="nav-text">客户端程序连接</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yuana1</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
